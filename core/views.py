@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ModelViewSet
 
-from core.models import Categoria, Editora, Livro
-from core.serializers import CategoriaSerializer, EditoraSerializer, LivroSerializer
+from core.models import Categoria, Editora
+from core.serializers import CategoriaSerializer, EditoraSerializer
 
 class CategoriaViewSet(ModelViewSet):
     queryset = Categoria.objects.all()
@@ -11,8 +11,4 @@ class CategoriaViewSet(ModelViewSet):
 class EditoraViewSet(ModelViewSet):
     queryset = Editora.objects.all()
     serializer_class = EditoraSerializer
-
-class LivroSerializer(ModelViewSet):
-    class Meta:
-        model = Livro
-        fields = "__all__"
+    
