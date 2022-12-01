@@ -6,8 +6,8 @@ from uploader.models import Image
 
 class Livro(models.Model):
     titulo = models.CharField(max_length=255)
-    ISBN = models.CharField(max_length=32)
-    quantidade = models.IntegerField()
+    ISBN = models.CharField(max_length=32, null=True, blank=True)
+    quantidade = models.IntegerField(null=True, blank=True, default=0)
     preco = models.DecimalField(max_digits=7, decimal_places=2)
     categoria = models.ForeignKey(
         Categoria, on_delete=models.PROTECT, related_name="livros")
